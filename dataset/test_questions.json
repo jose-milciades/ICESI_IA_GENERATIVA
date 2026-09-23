@@ -1,0 +1,86 @@
+[
+  {
+    "test_id": "CP-01",
+    "user_message": "¡Buenas tardes! Qué gusto encontrar esta tienda.",
+    "expected_message_type": "greeting",
+    "expected_behavior": "Saludar sin consultar pedidos."
+  },
+  {
+    "test_id": "CP-02",
+    "user_message": "Necesito que un asesor corrija los datos de mi factura.",
+    "expected_message_type": "personalized_attention",
+    "expected_behavior": "Clasificar como atención personalizada, sin afirmar que contactó un asesor."
+  },
+  {
+    "test_id": "CP-03",
+    "user_message": "El limpiador de PED-2026-0010 no ha llegado; ¿cuánto se aplazó y cómo lo rastreo?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Retrasado; fecha inicial 2026-09-20, 3 días, estimada 2026-09-23 y seguimiento SIM-2026-000010."
+  },
+  {
+    "test_id": "CP-04",
+    "user_message": "¿Ya despacharon las macetas de mi compra PED-2026-0008?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Estado enviado y fecha estimada 2026-09-24."
+  },
+  {
+    "test_id": "CP-05",
+    "user_message": "Confírmame si recibí la fruta del pedido PED-2026-0005 y en qué fecha.",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Entregado el 2026-09-16."
+  },
+  {
+    "test_id": "CP-06",
+    "user_message": "¿Para qué sirve el producto de la compra PED-2026-0004 y con qué está fabricado?",
+    "expected_message_type": "product_information",
+    "expected_behavior": "Compostera de plástico reciclado para transformar residuos orgánicos en compost."
+  },
+  {
+    "test_id": "CP-07",
+    "user_message": "¿Qué capacidad en litros tiene la compostera de PED-2026-0004?",
+    "expected_message_type": "product_information",
+    "expected_behavior": "Indicar que la capacidad no está disponible; no inventarla."
+  },
+  {
+    "test_id": "CP-08",
+    "user_message": "Me arrepentí de comprar las bolsas de PED-2026-0007; quisiera devolverlas.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Elegible; plazo de 20 días hábiles, sin afirmar que se tramitó."
+  },
+  {
+    "test_id": "CP-09",
+    "user_message": "Solicito devolver los huevos que aparecen en PED-2026-0009.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Rechazar amablemente por categoría perecederos."
+  },
+  {
+    "test_id": "CP-10",
+    "user_message": "Quisiera hacer una devolución del detergente de PED-2026-0002.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Rechazar amablemente por categoría aseo general."
+  },
+  {
+    "test_id": "CP-11",
+    "user_message": "Mi paquete se está demorando; ¿pueden revisar cuándo llegará?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Solicitar código de pedido."
+  },
+  {
+    "test_id": "CP-12",
+    "user_message": "Necesito rastrear la compra PED-2026-0874.",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Informar que no existe y pedir verificar código."
+  },
+  {
+    "test_id": "CP-13",
+    "user_message": "Buenas, ¿dónde van las bolsas de PED-2026-0007? Además, prefiero devolverlas.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Priorizar devolución y comunicar elegibilidad y 20 días hábiles."
+  },
+  {
+    "test_id": "CP-14",
+    "user_message": "¿De qué está hecho el producto de PED-2026-0008 y cuándo me llegará?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Priorizar estado; enviado y entrega estimada 2026-09-24."
+  }
+]

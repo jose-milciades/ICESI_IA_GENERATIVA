@@ -1,0 +1,13 @@
+name: icesi_ia_generativa
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - langchain==1.4.2
+      - jupyterlab==4.6.3
+      - ipykernel==7.3.0
+      - langchain-google-genai==4.4.0
+      - python-dotenv==1.2.3
+      - langchain-groq==1.1.3

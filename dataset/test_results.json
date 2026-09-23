@@ -1,0 +1,168 @@
+[
+  {
+    "test_id": "CP-01",
+    "user_message": "¡Buenas tardes! Qué gusto encontrar esta tienda.",
+    "expected_message_type": "greeting",
+    "expected_behavior": "Saludar sin consultar pedidos.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "greeting",
+      "expanded_response": "¡Hola! ¿En qué puedo ayudarte con tus productos o pedidos?"
+    }
+  },
+  {
+    "test_id": "CP-02",
+    "user_message": "Necesito que un asesor corrija los datos de mi factura.",
+    "expected_message_type": "personalized_attention",
+    "expected_behavior": "Clasificar como atención personalizada, sin afirmar que contactó un asesor.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "personalized_attention",
+      "expanded_response": "La solicitud de corrección de datos de factura requiere atención personalizada."
+    }
+  },
+  {
+    "test_id": "CP-03",
+    "user_message": "El limpiador de PED-2026-0010 no ha llegado; ¿cuánto se aplazó y cómo lo rastreo?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Retrasado; fecha inicial 2026-09-20, 3 días, estimada 2026-09-23 y seguimiento SIM-2026-000010.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
+      "order_response": "**Pedido PED-2026-0010: retrasado**\n\nLamentamos el retraso.\n- Entrega prometida originalmente: 2026-09-20.\n- Días de atraso: 3.\n- Entrega estimada actualizada: 2026-09-23.\n- Número de seguimiento: SIM-2026-000010.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000010)."
+    }
+  },
+  {
+    "test_id": "CP-04",
+    "user_message": "¿Ya despacharon las macetas de mi compra PED-2026-0008?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Estado enviado y fecha estimada 2026-09-24.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
+      "order_response": "**Pedido PED-2026-0008: enviado**\n\n- Estado actual: enviado.\n- Fecha estimada de entrega: 2026-09-24.\n- Número de seguimiento: SIM-2026-000008.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000008)."
+    }
+  },
+  {
+    "test_id": "CP-05",
+    "user_message": "Confírmame si recibí la fruta del pedido PED-2026-0005 y en qué fecha.",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Entregado el 2026-09-16.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
+      "order_response": "**Pedido PED-2026-0005: entregado**\n\nEl pedido PED-2026-0005 fue entregado el 2026-09-16."
+    }
+  },
+  {
+    "test_id": "CP-06",
+    "user_message": "¿Para qué sirve el producto de la compra PED-2026-0004 y con qué está fabricado?",
+    "expected_message_type": "product_information",
+    "expected_behavior": "Compostera de plástico reciclado para transformar residuos orgánicos en compost.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "product_information",
+      "expanded_response": "El usuario solicita características del producto.",
+      "order_response": "**Compostera doméstica de plástico reciclado (PED-2026-0004)**\n\nEste producto sirve para transformar residuos orgánicos domésticos en compost. Está fabricado con plástico reciclado."
+    }
+  },
+  {
+    "test_id": "CP-07",
+    "user_message": "¿Qué capacidad en litros tiene la compostera de PED-2026-0004?",
+    "expected_message_type": "product_information",
+    "expected_behavior": "Indicar que la capacidad no está disponible; no inventarla.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "product_information",
+      "expanded_response": "El usuario solicita características del producto.",
+      "order_response": "La capacidad en litros de la compostera del pedido **PED-2026-0004** no está disponible en la información proporcionada."
+    }
+  },
+  {
+    "test_id": "CP-08",
+    "user_message": "Me arrepentí de comprar las bolsas de PED-2026-0007; quisiera devolverlas.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Elegible; plazo de 20 días hábiles, sin afirmar que se tramitó.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_return",
+      "expanded_response": "El usuario solicita la devolución de un producto.",
+      "order_response": "**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **20 días hábiles**. Esta respuesta informa la elegibilidad; no confirma que la devolución haya sido registrada o ejecutada."
+    }
+  },
+  {
+    "test_id": "CP-09",
+    "user_message": "Solicito devolver los huevos que aparecen en PED-2026-0009.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Rechazar amablemente por categoría perecederos.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_return",
+      "expanded_response": "El usuario solicita la devolución de un producto.",
+      "order_response": "**Devolución del pedido PED-2026-0009**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **perecederos**."
+    }
+  },
+  {
+    "test_id": "CP-10",
+    "user_message": "Quisiera hacer una devolución del detergente de PED-2026-0002.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Rechazar amablemente por categoría aseo general.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_return",
+      "expanded_response": "El usuario solicita una devolución de producto.",
+      "order_response": "**Devolución del pedido PED-2026-0002**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **aseo general**."
+    }
+  },
+  {
+    "test_id": "CP-11",
+    "user_message": "Mi paquete se está demorando; ¿pueden revisar cuándo llegará?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Solicitar código de pedido.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
+      "order_response": "Para poder revisar el estado de tu pedido y la fecha estimada de llegada, por favor, indícame el **código de tu pedido**."
+    }
+  },
+  {
+    "test_id": "CP-12",
+    "user_message": "Necesito rastrear la compra PED-2026-0874.",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Informar que no existe y pedir verificar código.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
+      "order_response": "No encuentro el pedido **PED-2026-0874** en los datos disponibles. ¿Puedes verificar el código?"
+    }
+  },
+  {
+    "test_id": "CP-13",
+    "user_message": "Buenas, ¿dónde van las bolsas de PED-2026-0007? Además, prefiero devolverlas.",
+    "expected_message_type": "order_return",
+    "expected_behavior": "Priorizar devolución y comunicar elegibilidad y 20 días hábiles.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_return",
+      "expanded_response": "El usuario solicita una devolución, que tiene prioridad sobre la consulta de envío.",
+      "order_response": "**Pedido PED-2026-0007: en tránsito**\n\nEl último estado registrado para tu pedido es \"en tránsito\".\n- La fecha estimada de entrega es: 2026-09-25.\n- Número de seguimiento: SIM-2026-000007.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000007).\n\n**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **20 días hábiles**. Esta respuesta informa la elegibilidad; no confirma que la devolución haya sido registrada o ejecutada."
+    }
+  },
+  {
+    "test_id": "CP-14",
+    "user_message": "¿De qué está hecho el producto de PED-2026-0008 y cuándo me llegará?",
+    "expected_message_type": "order_status",
+    "expected_behavior": "Priorizar estado; enviado y entrega estimada 2026-09-24.",
+    "classification_passed": true,
+    "result": {
+      "message_type": "order_status",
+      "expanded_response": "La consulta del envío tiene prioridad sobre las características del producto.",
+      "order_response": "**Pedido PED-2026-0008: Macetas biodegradables de fibra de coco**\n\nEste producto está hecho de fibra de coco biodegradable.\nSu entrega está estimada para el **2026-09-24**.\nNúmero de seguimiento: SIM-2026-000008.\n[Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000008)."
+    }
+  }
+]
