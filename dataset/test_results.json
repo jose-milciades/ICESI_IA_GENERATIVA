@@ -7,7 +7,7 @@
     "classification_passed": true,
     "result": {
       "message_type": "greeting",
-      "expanded_response": "¡Hola! ¿En qué puedo ayudarte con tus productos o pedidos?"
+      "expanded_response": "¡Buenas tardes! Es un placer tenerte por aquí. ¿En qué puedo ayudarte hoy?"
     }
   },
   {
@@ -18,7 +18,7 @@
     "classification_passed": true,
     "result": {
       "message_type": "personalized_attention",
-      "expanded_response": "La solicitud de corrección de datos de factura requiere atención personalizada."
+      "expanded_response": "La solicitud de corrección de datos en la factura requiere atención personalizada."
     }
   },
   {
@@ -30,7 +30,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
-      "order_response": "**Pedido PED-2026-0010: retrasado**\n\nLamentamos el retraso.\n- Entrega prometida originalmente: 2026-09-20.\n- Días de atraso: 3.\n- Entrega estimada actualizada: 2026-09-23.\n- Número de seguimiento: SIM-2026-000010.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000010)."
+      "order_response": "**Pedido PED-2026-0010: retrasado**\n\nLamentamos el retraso.\n- Entrega prometida originalmente: 2026-09-20.\n- Días de atraso: 3.\n- Entrega estimada actualizada: 2026-09-23.\n- Número de seguimiento: SIM-2026-000010.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000010).",
+      "retrieved_sources": []
     }
   },
   {
@@ -42,7 +43,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
-      "order_response": "**Pedido PED-2026-0008: enviado**\n\n- Estado actual: enviado.\n- Fecha estimada de entrega: 2026-09-24.\n- Número de seguimiento: SIM-2026-000008.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000008)."
+      "order_response": "**Pedido PED-2026-0008: enviado**\n\nEl estado actual de tu pedido es: **enviado**.\n- Fecha de envío: 2026-09-20.\n- Entrega estimada: 2026-09-24.\n- Número de seguimiento: SIM-2026-000008.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000008).",
+      "retrieved_sources": []
     }
   },
   {
@@ -54,7 +56,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
-      "order_response": "**Pedido PED-2026-0005: entregado**\n\nEl pedido PED-2026-0005 fue entregado el 2026-09-16."
+      "order_response": "**Pedido PED-2026-0005: entregado**\n\nEl pedido fue entregado el **2026-09-16**.",
+      "retrieved_sources": []
     }
   },
   {
@@ -66,7 +69,13 @@
     "result": {
       "message_type": "product_information",
       "expanded_response": "El usuario solicita características del producto.",
-      "order_response": "**Compostera doméstica de plástico reciclado (PED-2026-0004)**\n\nEste producto sirve para transformar residuos orgánicos domésticos en compost. Está fabricado con plástico reciclado."
+      "order_response": "**Pedido PED-2026-0004**\n\nEl producto es una **Compostera doméstica de plástico reciclado**. Sirve para transformar residuos orgánicos domésticos en compost. Está fabricado con **plástico reciclado**.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv"
+      ]
     }
   },
   {
@@ -78,7 +87,13 @@
     "result": {
       "message_type": "product_information",
       "expanded_response": "El usuario solicita características del producto.",
-      "order_response": "La capacidad en litros de la compostera del pedido **PED-2026-0004** no está disponible en la información proporcionada."
+      "order_response": "La capacidad en litros de la compostera del pedido **PED-2026-0004** no está disponible en la información proporcionada.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv"
+      ]
     }
   },
   {
@@ -89,8 +104,14 @@
     "classification_passed": true,
     "result": {
       "message_type": "order_return",
-      "expanded_response": "El usuario solicita la devolución de un producto.",
-      "order_response": "**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **20 días hábiles**. Esta respuesta informa la elegibilidad; no confirma que la devolución haya sido registrada o ejecutada."
+      "expanded_response": "El usuario solicita una devolución de un producto.",
+      "order_response": "**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **30 días calendario**.\n\nPara iniciar el proceso de devolución, por favor visita nuestro portal web de solicitudes: https://ecomarket.com/devoluciones.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Preguntas_Frecuentes_EcoMarket.csv",
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf"
+      ]
     }
   },
   {
@@ -101,8 +122,14 @@
     "classification_passed": true,
     "result": {
       "message_type": "order_return",
-      "expanded_response": "El usuario solicita la devolución de un producto.",
-      "order_response": "**Devolución del pedido PED-2026-0009**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **perecederos**."
+      "expanded_response": "El usuario solicita una devolución.",
+      "order_response": "**Devolución del pedido PED-2026-0009**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **perecederos**.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf"
+      ]
     }
   },
   {
@@ -113,8 +140,14 @@
     "classification_passed": true,
     "result": {
       "message_type": "order_return",
-      "expanded_response": "El usuario solicita una devolución de producto.",
-      "order_response": "**Devolución del pedido PED-2026-0002**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **aseo general**."
+      "expanded_response": "El usuario solicita la devolución de un producto.",
+      "order_response": "**Devolución del pedido PED-2026-0002**\n\nLo sentimos, no se aceptan devoluciones de este producto porque pertenece a la categoría **aseo general**.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf",
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv"
+      ]
     }
   },
   {
@@ -126,7 +159,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
-      "order_response": "Para poder revisar el estado de tu pedido y la fecha estimada de llegada, por favor, indícame el **código de tu pedido**."
+      "order_response": "Para poder revisar el estado de tu paquete, por favor, indícame el **código de tu pedido**.",
+      "retrieved_sources": []
     }
   },
   {
@@ -138,7 +172,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "El usuario consulta el estado de entrega de su pedido.",
-      "order_response": "No encuentro el pedido **PED-2026-0874** en los datos disponibles. ¿Puedes verificar el código?"
+      "order_response": "No encuentro el pedido **PED-2026-0874** en los datos disponibles. ¿Puedes verificar el código?",
+      "retrieved_sources": []
     }
   },
   {
@@ -150,7 +185,13 @@
     "result": {
       "message_type": "order_return",
       "expanded_response": "El usuario solicita una devolución, que tiene prioridad sobre la consulta de envío.",
-      "order_response": "**Pedido PED-2026-0007: en tránsito**\n\nEl último estado registrado para tu pedido es \"en tránsito\".\n- La fecha estimada de entrega es: 2026-09-25.\n- Número de seguimiento: SIM-2026-000007.\n- [Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000007).\n\n**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **20 días hábiles**. Esta respuesta informa la elegibilidad; no confirma que la devolución haya sido registrada o ejecutada."
+      "order_response": "**Devolución del pedido PED-2026-0007**\n\nEl producto es **elegible para devolución**, por pertenecer a la categoría hogar. El plazo para realizarla es de **20 días hábiles**. Esta respuesta informa la elegibilidad; no confirma que la devolución haya sido registrada o ejecutada.\n\n**Pedido PED-2026-0007: Bolsas reutilizables de algodón reciclado**\n\nLas bolsas son de algodón reciclado para transportar compras y reutilizar en cada visita al mercado.",
+      "retrieved_sources": [
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Preguntas_Frecuentes_EcoMarket.csv",
+        "dataset/knowledge_base/Catalogo_Productos_Ecologicos.csv",
+        "dataset/knowledge_base/Política Integral de Devoluciones y Garantías - EcoMarket.pdf"
+      ]
     }
   },
   {
@@ -162,7 +203,8 @@
     "result": {
       "message_type": "order_status",
       "expanded_response": "La consulta del envío tiene prioridad sobre las características del producto.",
-      "order_response": "**Pedido PED-2026-0008: Macetas biodegradables de fibra de coco**\n\nEste producto está hecho de fibra de coco biodegradable.\nSu entrega está estimada para el **2026-09-24**.\nNúmero de seguimiento: SIM-2026-000008.\n[Rastrear pedido](https://rastreo.example/pedidos/SIM-2026-000008)."
+      "order_response": "**Información del pedido PED-2026-0008**\n\nEl producto **Macetas biodegradables de fibra de coco** está hecho de fibra de coco biodegradable.\n\nLa entrega estimada es para el **2026-09-24**.",
+      "retrieved_sources": []
     }
   }
 ]

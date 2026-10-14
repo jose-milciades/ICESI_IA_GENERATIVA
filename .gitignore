@@ -2,4 +2,5 @@
 .ipynb_checkpoints/
 __pycache__/
 .env
+dataset/milvus_lite.db*
 .env

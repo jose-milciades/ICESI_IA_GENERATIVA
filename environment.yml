@@ -6,8 +6,15 @@ dependencies:
   - pip
   - pip:
       - langchain==1.4.2
+      - langchain-text-splitters==1.1.2
       - jupyterlab==4.6.3
       - ipykernel==7.3.0
       - langchain-google-genai==4.4.0
       - python-dotenv==1.2.3
       - langchain-groq==1.1.3
+      - pymilvus==3.0.2
+      - milvus-lite==3.2.1
+      - langchain-milvus==0.4.0
+      - langchain-huggingface==1.2.2
+      - sentence-transformers==6.1.0
+      - pypdf==6.19.0
