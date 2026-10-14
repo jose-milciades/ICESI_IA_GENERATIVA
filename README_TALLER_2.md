@@ -50,10 +50,10 @@ El archivo [`dataset/orders.json`](dataset/orders.json) se conserva para resolve
 
 ### Estrategias de chunking
 
-Se usan dos estrategias, según la estructura de cada fuente:
+Se usan dos estrategias, según la estructura de cada fuente. El criterio general es conservar el **contexto completo de la unidad consultable**: los textos y registros son suficientemente pequeños para recuperar sus datos completos en un solo chunk, evitando dividir información que debería interpretarse junta.
 
-- **PDF de política:** se extrae el texto por página y se aplica `RecursiveCharacterTextSplitter` con `chunk_size=1000` y `chunk_overlap=200`. El solapamiento conserva el contexto cuando una regla queda dividida entre dos fragmentos.
-- **Archivos CSV:** cada fila es un chunk completo. Antes de vectorizarla se antepone el nombre de cada columna al valor, con el formato `columna: valor`, y se separan los campos por saltos de línea. Así el embedding conserva el significado de los valores aunque se consulte por lenguaje natural.
+- **PDF de política:** se extrae el texto por página y se aplica `RecursiveCharacterTextSplitter` con `chunk_size=1000` y `chunk_overlap=200`. Cada fragmento mantiene el contexto de la regla o sección que contiene; el solapamiento conserva información adicional cuando una regla queda dividida entre dos fragmentos.
+- **Archivos CSV:** cada fila es un chunk completo. Como cada registro es pequeño, sus datos se obtienen completos en un único chunk. Antes de vectorizarla se antepone el nombre de cada columna al valor, con el formato `columna: valor`, y se separan los campos por saltos de línea. Así el embedding conserva el significado de todos los campos del registro.
 
 La ejecución actual valida **10 chunks del PDF** y **30 registros/chunks de CSV**, para un total de **40 chunks**. Cada documento conserva metadatos de origen, tipo, página y fila para mostrar las fuentes recuperadas.
 
