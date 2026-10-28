@@ -3,4 +3,11 @@
 __pycache__/
 .env
 dataset/milvus_lite.db*
-.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+generated_labels/
