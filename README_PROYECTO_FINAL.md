@@ -361,27 +361,3 @@ ruff check src app scripts tests
 
 Las pruebas automáticas no consumen el API del modelo. Las validaciones manuales de
 extremo a extremo sí requieren las variables del archivo `.env`.
-
-## Entrega y demostración
-
-- Repositorio: [jose-milciades/ICESI_IA_GENERATIVA](https://github.com/jose-milciades/ICESI_IA_GENERATIVA)
-- Video de demostración, máximo 10 minutos: **pendiente de agregar antes de la entrega**.
-
-Guion sugerido para el video:
-
-1. **Fase 1, 2–3 minutos:** explicar las cinco herramientas, por qué el RAG es una
-   herramienta, la elección de LangGraph y el diagrama del flujo.
-2. **Fase 2, 3–4 minutos:** recorrer el paquete, explicar planner, ReAct, replanner,
-   estado, checkpoints, aprobación, errores e idempotencia.
-3. **Fase 4, 3–4 minutos:** iniciar Streamlit y demostrar una pregunta informativa, una
-   consulta de pedidos, una devolución elegible con aprobación y un rechazo por
-   elegibilidad.
-
-## Cumplimiento de la rúbrica
-
-| Criterio | Evidencia en el proyecto |
-|---|---|
-| Arquitectura y herramientas | Cinco herramientas documentadas, selección justificada de LangGraph y flujo completo |
-| Agente y componentes | Paquete instalable, Plan-and-Execute, ReAct, RAG, decisiones, errores, aprobación e idempotencia |
-| Análisis crítico | Riesgos, mitigaciones, observabilidad y diez propuestas de evolución |
-| Despliegue funcional | Interfaz Streamlit conversacional con confirmación y descarga de guía |
