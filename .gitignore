@@ -3,6 +3,9 @@
 __pycache__/
 .env
 dataset/milvus_lite.db*
+dataset/ecomarket_milvus.db*
+dataset/checkpoints.sqlite*
+dataset/returns.json
 .pytest_cache/
 .ruff_cache/
 .coverage
